@@ -2,9 +2,9 @@ package endpoint
 
 import (
 	"github.com/gin-gonic/gin"
-	"main"
+	"github.com/ZongweiBai/learning-go/repository"
 )
 
-func adminHandler(c *gin.Context) {
-	c.JSON(200, &main.User{ID: 20001, Name: "李四"})
+func AdminHandler(c *gin.Context) {
+	c.JSON(200, &repository.User{ID: 20001, Name: "李三四"})
 }

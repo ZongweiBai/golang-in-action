@@ -2,15 +2,23 @@ package main
 
 import (
 	// "fmt"
-	"github.com/gin-gonic/gin"
+	"github.com/ZongweiBai/learning-go/endpoint"
 	"log"
-	"time"
 	"strconv"
-	"endpoint"
+	"time"
+	"github.com/ZongweiBai/learning-go/repository"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	
 	log.SetFlags(log.Llongfile | log.Lmicroseconds | log.Ldate)
+
+	userOne := repository.NewUser(1, "李四")
+	log.Printf("用户ID: %v, 用户名：%s", userOne.ID, userOne.Name)
+	userOne.ChangeId(12, userOne)
+	userOne.ChangeName("李四五")
+	log.Printf("用户ID: %v, 用户名：%s", userOne.ID, userOne.Name)
 
 	r := gin.Default()
 
@@ -48,7 +56,7 @@ func main() {
 
 		// var json User
 		// 或者
-		json := User{}
+		json := repository.User{}
 		err := c.BindJSON(&json)
 		if err != nil {
 			log.Println("===================>>>>>>>>")
@@ -60,7 +68,7 @@ func main() {
 		}
 	})
 
-	users := []User{{ID: 1, Name: "张三"}, {ID: 2, Name: "李四"}}
+	users := []repository.User{{ID: 1, Name: "张三"}, {ID: 2, Name: "李四"}}
 	r.GET("/users", func(c *gin.Context) {
 		c.JSON(200, users)
 	})
@@ -68,37 +76,32 @@ func main() {
 	r.GET("/users/:id", func(c *gin.Context) {
 		id := c.Param("id")
 		idUInt, _ := strconv.ParseUint(id, 0, 64)
-		c.JSON(200, &User{ID: idUInt, Name: "张三" + id})
+		c.JSON(200, &repository.User{ID: idUInt, Name: "张三" + id})
 	})
 
 	r.GET("/users/query", func(c *gin.Context) {
 		id := c.DefaultQuery("id", "0")
 		idUInt, _ := strconv.ParseUint(id, 0, 64)
-		c.JSON(200, &User{ID: idUInt, Name: c.Query("name")})
+		c.JSON(200, &repository.User{ID: idUInt, Name: c.Query("name")})
 	})
 
 	// 路由嵌套分组
 	v1Group := r.Group("/v1")
 	{
 		v1Group.GET("/users", func(c *gin.Context) {
-			c.JSON(200, &User{ID: 10001, Name: "李四"})
+			c.JSON(200, &repository.User{ID: 10001, Name: "李四"})
 		})
 
 		v1AdminGroup := v1Group.Group("/admin")
 		{
-			v1AdminGroup.GET("/users", func(c *gin.Context) {
-				c.JSON(200, &User{ID: 20001, Name: "李四"})
-			})
+			// v1AdminGroup.GET("/users", func(c *gin.Context) {
+			// 	c.JSON(200, &User{ID: 20001, Name: "李四"})
+			// })
+			v1AdminGroup.GET("/users", endpoint.AdminHandler)
 		}
 	}
 	r.Run(":8080")
 }
-
-type User struct {
-	ID   uint64 `json:"id"`
-	Name string `json:"name"`
-}
-
 
 func costTime() gin.HandlerFunc {
 	return func(c *gin.Context) {
