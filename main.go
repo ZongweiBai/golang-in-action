@@ -3,15 +3,21 @@ package main
 import (
 	// "fmt"
 	"github.com/ZongweiBai/learning-go/endpoint"
+	"github.com/ZongweiBai/learning-go/config"
 	"log"
 	"strconv"
 	"time"
 	"github.com/ZongweiBai/learning-go/repository"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-contrib/zap"
+	"go.uber.org/zap"
 )
 
 func main() {
 	
+	var zapLogger *zap.Logger
+	zapLogger, config.LOG = config.InitLogger()
+
 	log.SetFlags(log.Llongfile | log.Lmicroseconds | log.Ldate)
 
 	userOne := repository.NewUser(1, "李四")
@@ -20,7 +26,10 @@ func main() {
 	userOne.ChangeName("李四五")
 	log.Printf("用户ID: %v, 用户名：%s", userOne.ID, userOne.Name)
 
-	r := gin.Default()
+	// r := gin.Default()
+	r := gin.New()
+	r.Use(ginzap.Ginzap(zapLogger, time.RFC3339, true))
+	r.Use(ginzap.RecoveryWithZap(zapLogger, true))
 
 	r.Use(gin.BasicAuth(gin.Accounts{
 		"admin": "123456",

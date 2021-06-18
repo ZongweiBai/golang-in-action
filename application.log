@@ -1,0 +1,5 @@
+2021/06/18 23:22:30.006	[35mDEBUG[0m	endpoint/adminApi.go:10	进入到AdminHandler方法：李三四
+2021/06/18 23:25:16.006	[35mDEBUG[0m	endpoint/adminApi.go:10	进入到AdminHandler方法：李三四
+2021/06/18 23:25:24.006	[35mDEBUG[0m	endpoint/adminApi.go:10	进入到AdminHandler方法：李三四
+2021/06/18 23:54:41.006	[35mDEBUG[0m	endpoint/adminApi.go:10	进入到AdminHandler方法：李三四
+2021/06/18 23:54:41.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/v1/admin/users	{"status": 200, "method": "GET", "path": "/v1/admin/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-18T15:54:41Z", "latency": 0.0004167}
