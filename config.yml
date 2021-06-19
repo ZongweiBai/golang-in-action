@@ -1,0 +1,3 @@
+log:
+  filePath: /home/zongwei/workspace/golang/src/github.com/ZongweiBai/learning-go/log
+  level: DEBUG

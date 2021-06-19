@@ -2,21 +2,41 @@ package main
 
 import (
 	// "fmt"
-	"github.com/ZongweiBai/learning-go/endpoint"
 	"github.com/ZongweiBai/learning-go/config"
+	"github.com/ZongweiBai/learning-go/core"
+	_ "github.com/ZongweiBai/learning-go/docs"
+	"github.com/ZongweiBai/learning-go/endpoint"
+	"github.com/ZongweiBai/learning-go/repository"
+	"github.com/gin-contrib/zap"
+	"github.com/gin-gonic/gin"
+	"github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
+	"go.uber.org/zap"
 	"log"
 	"strconv"
 	"time"
-	"github.com/ZongweiBai/learning-go/repository"
-	"github.com/gin-gonic/gin"
-	"github.com/gin-contrib/zap"
-	"go.uber.org/zap"
 )
 
+// @title Learning-Go Swagger文档
+// @version 1.0
+// @description Go入门学习项目
+// @termsOfService https://github.com/ZongweiBai
+
+// @contact.name ZongweiBai
+// @contact.url https://github.com/ZongweiBai
+// @contact.email zongwei.bai@gmail.com
+
+// @license.name MIT License
+// @license.url https://opensource.org/licenses/MIT
+
+// @host 127.0.0.1:8080
+// @BasePath /
 func main() {
-	
+
+	core.VIPER = config.InitViper()
+
 	var zapLogger *zap.Logger
-	zapLogger, config.LOG = config.InitLogger()
+	zapLogger, core.LOG = config.InitLogger()
 
 	log.SetFlags(log.Llongfile | log.Lmicroseconds | log.Ldate)
 
@@ -31,11 +51,10 @@ func main() {
 	r.Use(ginzap.Ginzap(zapLogger, time.RFC3339, true))
 	r.Use(ginzap.RecoveryWithZap(zapLogger, true))
 
-	r.Use(gin.BasicAuth(gin.Accounts{
-		"admin": "123456",
-	}))
-
 	r.Use(costTime())
+
+	// http://localhost:8080/swagger/index.html
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	// http://localhost:8080/?media=123&media=345&ids[a]=123&ids[b]=456&ids[c]=789
 	r.GET("/", func(c *gin.Context) {
@@ -96,7 +115,11 @@ func main() {
 
 	// 路由嵌套分组
 	v1Group := r.Group("/v1")
+	v1Group.Use(gin.BasicAuth(gin.Accounts{
+		"admin": "123456",
+	}))
 	{
+
 		v1Group.GET("/users", func(c *gin.Context) {
 			c.JSON(200, &repository.User{ID: 10001, Name: "李四"})
 		})

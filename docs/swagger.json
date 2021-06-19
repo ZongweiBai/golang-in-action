@@ -1,0 +1,71 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Go入门学习项目",
+        "title": "Learning-Go Swagger文档",
+        "termsOfService": "https://github.com/ZongweiBai",
+        "contact": {
+            "name": "ZongweiBai",
+            "url": "https://github.com/ZongweiBai",
+            "email": "zongwei.bai@gmail.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "1.0"
+    },
+    "host": "127.0.0.1:8080",
+    "basePath": "/",
+    "paths": {
+        "/v1/admin/users": {
+            "get": {
+                "security": [
+                    {
+                        "model.ApiBacisAuth": []
+                    }
+                ],
+                "description": "通过名称获取Admin信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin相关接口"
+                ],
+                "summary": "获取Admin信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Basic 用户令牌",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/repository.User"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "repository.User": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

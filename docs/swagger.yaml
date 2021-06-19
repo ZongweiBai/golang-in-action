@@ -1,0 +1,46 @@
+basePath: /
+definitions:
+  repository.User:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+host: 127.0.0.1:8080
+info:
+  contact:
+    email: zongwei.bai@gmail.com
+    name: ZongweiBai
+    url: https://github.com/ZongweiBai
+  description: Go入门学习项目
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+  termsOfService: https://github.com/ZongweiBai
+  title: Learning-Go Swagger文档
+  version: "1.0"
+paths:
+  /v1/admin/users:
+    get:
+      consumes:
+      - application/json
+      description: 通过名称获取Admin信息
+      parameters:
+      - description: Basic 用户令牌
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/repository.User'
+      security:
+      - model.ApiBacisAuth: []
+      summary: 获取Admin信息
+      tags:
+      - Admin相关接口
+swagger: "2.0"
