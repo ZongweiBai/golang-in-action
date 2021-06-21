@@ -1,3 +1,7 @@
 log:
   filePath: /home/zongwei/workspace/golang/src/github.com/ZongweiBai/learning-go/log
   level: DEBUG
+
+jwt:
+  secret: learing_go_jwt_secret
+  expires: 3600

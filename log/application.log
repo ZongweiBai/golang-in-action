@@ -83,3 +83,104 @@
 2021/06/19 23:07:20.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/v1/admin/users	{"status": 401, "method": "GET", "path": "/v1/admin/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-19T15:07:20Z", "latency": 0.000063025}
 2021/06/19 23:07:24.006	[35mDEBUG[0m	endpoint/adminApi.go:21	进入到AdminHandler方法：李三四
 2021/06/19 23:07:24.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/v1/admin/users	{"status": 200, "method": "GET", "path": "/v1/admin/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-19T15:07:24Z", "latency": 0.000196526}
+2021/06/21 23:17:19.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:17:19.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 200, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:17:19Z", "latency": 0.000787224}
+2021/06/21 23:19:53.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:19:53.006	[31mERROR[0m	endpoint/authorization.go:30	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:19:53.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 200, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:19:53Z", "latency": 0.000753951}
+2021/06/21 23:25:07.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:25:07.006	[31mERROR[0m	endpoint/authorization.go:30	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:25:07.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 200, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:25:07Z", "latency": 0.000694817}
+2021/06/21 23:26:46.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:26:46.006	[31mERROR[0m	endpoint/authorization.go:30	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:26:46.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 200, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:26:46Z", "latency": 0.000630788}
+2021/06/21 23:27:02.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:27:02.006	[31mERROR[0m	endpoint/authorization.go:30	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:27:02.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 200, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:27:02Z", "latency": 0.000431604}
+2021/06/21 23:29:13.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:29:13.006	[31mERROR[0m	zap@v0.0.1/zap.go:43	invalid character '"' after object key:value pair
+2021/06/21 23:29:25.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:29:25.006	[31mERROR[0m	endpoint/authorization.go:30	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:29:25.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:29:25Z", "latency": 0.000537559}
+2021/06/21 23:31:08.006	[35mDEBUG[0m	endpoint/authorization.go:22	进入到GenerateAcessToken方法
+2021/06/21 23:31:08.006	[31mERROR[0m	endpoint/authorization.go:31	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:31:08.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:31:08Z", "latency": 0.000598912}
+2021/06/21 23:32:23.006	[35mDEBUG[0m	endpoint/authorization.go:22	进入到GenerateAcessToken方法
+2021/06/21 23:32:23.006	[31mERROR[0m	endpoint/authorization.go:31	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:32:23.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:32:23Z", "latency": 0.00068109}
+2021/06/21 23:33:06.006	[35mDEBUG[0m	endpoint/authorization.go:22	进入到GenerateAcessToken方法
+2021/06/21 23:33:06.006	[31mERROR[0m	endpoint/authorization.go:31	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:33:06.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:33:06Z", "latency": 0.00586527}
+2021/06/21 23:33:35.006	[35mDEBUG[0m	endpoint/authorization.go:22	进入到GenerateAcessToken方法
+2021/06/21 23:33:35.006	[31mERROR[0m	endpoint/authorization.go:31	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:33:35.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:33:35Z", "latency": 0.001018582}
+2021/06/21 23:36:50.006	[35mDEBUG[0m	endpoint/authorization.go:22	进入到GenerateAcessToken方法
+2021/06/21 23:36:50.006	[31mERROR[0m	endpoint/authorization.go:31	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:36:50.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:36:50Z", "latency": 0.000648891}
+2021/06/21 23:37:52.006	[35mDEBUG[0m	endpoint/authorization.go:22	进入到GenerateAcessToken方法
+2021/06/21 23:37:52.006	[31mERROR[0m	endpoint/authorization.go:31	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:37:52.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:37:52Z", "latency": 0.000700002}
+2021/06/21 23:38:56.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:38:56.006	[31mERROR[0m	endpoint/authorization.go:30	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:38:56.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:38:56Z", "latency": 0.000537472}
+2021/06/21 23:40:01.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:40:01.006	[31mERROR[0m	endpoint/authorization.go:30	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:40:01.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:40:01Z", "latency": 0.000661281}
+2021/06/21 23:42:32.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:42:32.006	[34mINFO[0m	endpoint/authorization.go:68	用户名：张三, ID: 0001
+2021/06/21 23:42:32.006	[31mERROR[0m	endpoint/authorization.go:30	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:42:32.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:42:32Z", "latency": 0.000589689}
+2021/06/21 23:43:19.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:43:19.006	[34mINFO[0m	endpoint/authorization.go:68	用户名：张三, ID: 0001
+2021/06/21 23:43:19.006	[34mINFO[0m	endpoint/authorization.go:71	Token: &{ %!s(*jwt.SigningMethodECDSA=&{ES256 5 32 256}) map[alg:ES256 typ:JWT] {张三 0001 { %!s(int64=1624293799)  %!s(int64=0) learning-go %!s(int64=0) }}  %!s(bool=false)}
+2021/06/21 23:43:19.006	[31mERROR[0m	endpoint/authorization.go:30	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:43:19.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:43:19Z", "latency": 0.001980045}
+2021/06/21 23:45:53.006	[35mDEBUG[0m	endpoint/authorization.go:22	进入到GenerateAcessToken方法
+2021/06/21 23:45:53.006	[34mINFO[0m	endpoint/authorization.go:69	用户名：张三, ID: 0001
+2021/06/21 23:45:53.006	[34mINFO[0m	endpoint/authorization.go:72	Token: &{ %!s(*jwt.SigningMethodECDSA=&{ES256 5 32 256}) map[alg:ES256 typ:JWT] {张三 0001 { %!s(int64=1624293953)  %!s(int64=0) learning-go %!s(int64=0) }}  %!s(bool=false)}
+2021/06/21 23:45:53.006	[31mERROR[0m	endpoint/authorization.go:31	生成Token失败%!(EXTRA *errors.errorString=key is of invalid type)
+2021/06/21 23:45:53.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:45:53Z", "latency": 0.000737639}
+2021/06/21 23:48:45.006	[35mDEBUG[0m	endpoint/authorization.go:22	进入到GenerateAcessToken方法
+2021/06/21 23:48:45.006	[34mINFO[0m	endpoint/authorization.go:69	用户名：张三, ID: 0001
+2021/06/21 23:48:45.006	[34mINFO[0m	endpoint/authorization.go:72	Token: &{ %!s(*jwt.SigningMethodHMAC=&{HS256 5}) map[alg:HS256 typ:JWT] {张三 0001 { %!s(int64=1624294125)  %!s(int64=0) learning-go %!s(int64=0) }}  %!s(bool=false)}
+2021/06/21 23:48:45.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 200, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:48:45Z", "latency": 0.001220941}
+2021/06/21 23:49:43.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:49:43.006	[34mINFO[0m	endpoint/authorization.go:68	用户名：张三, ID: 0001
+2021/06/21 23:49:43.006	[34mINFO[0m	endpoint/authorization.go:71	Token: &{ %!s(*jwt.SigningMethodECDSA=&{ES256 5 32 256}) map[alg:ES256 typ:JWT] {张三 0001 { %!s(int64=1624294183)  %!s(int64=0) learning-go %!s(int64=0) }}  %!s(bool=false)}
+2021/06/21 23:49:43.006	[31mERROR[0m	endpoint/authorization.go:30	生成Token失败%!(EXTRA string=key is of invalid type)
+2021/06/21 23:49:43.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:49:43Z", "latency": 0.000774684}
+2021/06/21 23:50:05.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:50:05.006	[34mINFO[0m	endpoint/authorization.go:68	用户名：张三, ID: 0001
+2021/06/21 23:50:05.006	[34mINFO[0m	endpoint/authorization.go:71	Token: &{ %!s(*jwt.SigningMethodECDSA=&{ES256 5 32 256}) map[alg:ES256 typ:JWT] {张三 0001 { %!s(int64=1624294205)  %!s(int64=0) learning-go %!s(int64=0) }}  %!s(bool=false)}
+2021/06/21 23:50:05.006	[31mERROR[0m	endpoint/authorization.go:30	生成Token失败:key is of invalid type
+2021/06/21 23:50:05.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 500, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:50:05Z", "latency": 0.000667026}
+2021/06/21 23:56:06.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/21 23:56:06.006	[34mINFO[0m	endpoint/authorization.go:94	用户名：张三, ID: 001003
+2021/06/21 23:56:06.006	[34mINFO[0m	endpoint/authorization.go:97	Token: &{ %!s(*jwt.SigningMethodHMAC=&{HS256 5}) map[alg:HS256 typ:JWT] {张三 001003 { %!s(int64=1624294566)  %!s(int64=0) learning-go %!s(int64=0) }}  %!s(bool=false)}
+2021/06/21 23:56:06.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 200, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T15:56:06Z", "latency": 0.000646795}
+2021/06/21 23:56:18.006	[35mDEBUG[0m	endpoint/authorization.go:50	进入到ValidateAcessToken方法
+2021/06/21 23:56:18.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token/validate	{"status": 400, "method": "GET", "path": "/oauth/token/validate", "query": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IuW8oOS4iSIsInVzZXJJZCI6IjAwMTAwMyIsImV4cCI6MTYyNDI5NDU2NiwiaXNzIjoibGVhcm5pbmctZ28ifQ.w6xpXYcRpUllFbM_QxGHMcVTdqNO3a1q_I7h0CxiXEE%22", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-21T15:56:18Z", "latency": 0.000215632}
+2021/06/21 23:56:43.006	[35mDEBUG[0m	endpoint/authorization.go:50	进入到ValidateAcessToken方法
+2021/06/21 23:56:43.006	[31mERROR[0m	endpoint/authorization.go:58	校验Token失败:key is of invalid type
+2021/06/21 23:56:43.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token/validate	{"status": 500, "method": "GET", "path": "/oauth/token/validate", "query": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IuW8oOS4iSIsInVzZXJJZCI6IjAwMTAwMyIsImV4cCI6MTYyNDI5NDU2NiwiaXNzIjoibGVhcm5pbmctZ28ifQ.w6xpXYcRpUllFbM_QxGHMcVTdqNO3a1q_I7h0CxiXEE%22", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-21T15:56:43Z", "latency": 0.001090994}
+2021/06/21 23:56:55.006	[35mDEBUG[0m	endpoint/authorization.go:50	进入到ValidateAcessToken方法
+2021/06/21 23:56:55.006	[31mERROR[0m	endpoint/authorization.go:58	校验Token失败:key is of invalid type
+2021/06/21 23:56:55.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token/validate	{"status": 500, "method": "GET", "path": "/oauth/token/validate", "query": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IuW8oOS4iSIsInVzZXJJZCI6IjAwMTAwMyIsImV4cCI6MTYyNDI5NDU2NiwiaXNzIjoibGVhcm5pbmctZ28ifQ.w6xpXYcRpUllFbM_QxGHMcVTdqNO3a1q_I7h0CxiXEE", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-21T15:56:55Z", "latency": 0.000318682}
+2021/06/21 23:58:43.006	[35mDEBUG[0m	endpoint/authorization.go:50	进入到ValidateAcessToken方法
+2021/06/21 23:58:43.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token/validate	{"status": 200, "method": "GET", "path": "/oauth/token/validate", "query": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IuW8oOS4iSIsInVzZXJJZCI6IjAwMTAwMyIsImV4cCI6MTYyNDI5NDU2NiwiaXNzIjoibGVhcm5pbmctZ28ifQ.w6xpXYcRpUllFbM_QxGHMcVTdqNO3a1q_I7h0CxiXEE", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-21T15:58:43Z", "latency": 0.000411829}
+2021/06/22 00:08:40.006	[35mDEBUG[0m	endpoint/authorization.go:50	进入到ValidateAcessToken方法
+2021/06/22 00:08:40.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token/validate	{"status": 200, "method": "GET", "path": "/oauth/token/validate", "query": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IuW8oOS4iSIsInVzZXJJZCI6IjAwMTAwMyIsImV4cCI6MTYyNDI5NDU2NiwiaXNzIjoibGVhcm5pbmctZ28ifQ.w6xpXYcRpUllFbM_QxGHMcVTdqNO3a1q_I7h0CxiXEE", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-21T16:08:40Z", "latency": 0.000501985}
+2021/06/22 00:08:44.006	[35mDEBUG[0m	endpoint/authorization.go:50	进入到ValidateAcessToken方法
+2021/06/22 00:08:44.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token/validate	{"status": 200, "method": "GET", "path": "/oauth/token/validate", "query": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IuW8oOS4iSIsInVzZXJJZCI6IjAwMTAwMyIsImV4cCI6MTYyNDI5NDU2NiwiaXNzIjoibGVhcm5pbmctZ28ifQ.w6xpXYcRpUllFbM_QxGHMcVTdqNO3a1q_I7h0CxiXEE", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-21T16:08:44Z", "latency": 0.000288083}
+2021/06/22 00:08:45.006	[35mDEBUG[0m	endpoint/authorization.go:50	进入到ValidateAcessToken方法
+2021/06/22 00:08:45.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token/validate	{"status": 200, "method": "GET", "path": "/oauth/token/validate", "query": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IuW8oOS4iSIsInVzZXJJZCI6IjAwMTAwMyIsImV4cCI6MTYyNDI5NDU2NiwiaXNzIjoibGVhcm5pbmctZ28ifQ.w6xpXYcRpUllFbM_QxGHMcVTdqNO3a1q_I7h0CxiXEE", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-21T16:08:45Z", "latency": 0.000204965}
+2021/06/22 00:08:46.006	[35mDEBUG[0m	endpoint/authorization.go:50	进入到ValidateAcessToken方法
+2021/06/22 00:08:46.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token/validate	{"status": 200, "method": "GET", "path": "/oauth/token/validate", "query": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IuW8oOS4iSIsInVzZXJJZCI6IjAwMTAwMyIsImV4cCI6MTYyNDI5NDU2NiwiaXNzIjoibGVhcm5pbmctZ28ifQ.w6xpXYcRpUllFbM_QxGHMcVTdqNO3a1q_I7h0CxiXEE", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-21T16:08:46Z", "latency": 0.000305164}
+2021/06/22 00:08:55.006	[35mDEBUG[0m	endpoint/authorization.go:50	进入到ValidateAcessToken方法
+2021/06/22 00:08:55.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token/validate	{"status": 200, "method": "GET", "path": "/oauth/token/validate", "query": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IuW8oOS4iSIsInVzZXJJZCI6IjAwMTAwMyIsImV4cCI6MTYyNDI5NDU2NiwiaXNzIjoibGVhcm5pbmctZ28ifQ.w6xpXYcRpUllFbM_QxGHMcVTdqNO3a1q_I7h0CxiXEE", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-21T16:08:55Z", "latency": 0.000283454}
+2021/06/22 00:09:03.006	[35mDEBUG[0m	endpoint/authorization.go:50	进入到ValidateAcessToken方法
+2021/06/22 00:09:03.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token/validate	{"status": 200, "method": "GET", "path": "/oauth/token/validate", "query": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IuW8oOS4iSIsInVzZXJJZCI6IjAwMTAwMyIsImV4cCI6MTYyNDI5NDU2NiwiaXNzIjoibGVhcm5pbmctZ28ifQ.w6xpXYcRpUllFbM_QxGHMcVTdqNO3a1q_I7h0CxiXEE", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0", "time": "2021-06-21T16:09:03Z", "latency": 0.000245452}
+2021/06/22 00:09:10.006	[35mDEBUG[0m	endpoint/authorization.go:21	进入到GenerateAcessToken方法
+2021/06/22 00:09:10.006	[34mINFO[0m	endpoint/authorization.go:94	用户名：张三, ID: 001003
+2021/06/22 00:09:10.006	[34mINFO[0m	endpoint/authorization.go:97	Token: &{ %!s(*jwt.SigningMethodHMAC=&{HS256 5}) map[alg:HS256 typ:JWT] {张三 001003 { %!s(int64=1624295350)  %!s(int64=0) learning-go %!s(int64=0) }}  %!s(bool=false)}
+2021/06/22 00:09:10.006	[34mINFO[0m	zap@v0.0.1/zap.go:46	/oauth/token	{"status": 200, "method": "POST", "path": "/oauth/token", "query": "", "ip": "127.0.0.1", "user-agent": "axios/0.21.1", "time": "2021-06-21T16:09:10Z", "latency": 0.000541799}
