@@ -1,7 +1,6 @@
 package config
 
 import (
-	"github.com/ZongweiBai/learning-go/core"
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -15,19 +14,19 @@ func InitLogger() (*zap.Logger, *zap.SugaredLogger) {
 
 	// 读取log level
 	level := zap.DebugLevel
-	if core.CONFIG.Log.Level != "" {
-		switch core.CONFIG.Log.Level {
-		case core.LOG_LEVEL_INFO:
+	if CONFIG.Log.Level != "" {
+		switch CONFIG.Log.Level {
+		case LOG_LEVEL_INFO:
 			level = zap.InfoLevel
-		case core.LOG_LEVEL_WARN:
+		case LOG_LEVEL_WARN:
 			level = zap.WarnLevel
-		case core.LOG_LEVEL_ERROR:
+		case LOG_LEVEL_ERROR:
 			level = zap.ErrorLevel
-		case core.LOG_LEVEL_DPANIC:
+		case LOG_LEVEL_DPANIC:
 			level = zap.DPanicLevel
-		case core.LOG_LEVEL_PANIC:
+		case LOG_LEVEL_PANIC:
 			level = zap.PanicLevel
-		case core.LOG_LEVEL_FATAL:
+		case LOG_LEVEL_FATAL:
 			level = zap.FatalLevel
 		default:
 			level = zap.DebugLevel
@@ -43,8 +42,8 @@ func InitLogger() (*zap.Logger, *zap.SugaredLogger) {
 
 func getLogWriter() zapcore.WriteSyncer {
 	filePath := "./application.log"
-	if core.CONFIG.Log.FilePath != "" {
-		filePath = core.CONFIG.Log.FilePath + "/application.log"
+	if CONFIG.Log.FilePath != "" {
+		filePath = CONFIG.Log.FilePath + "/application.log"
 	}
 	// Filename: 日志文件的位置
 	// MaxSize：在进行切割之前，日志文件的最大大小（以MB为单位）

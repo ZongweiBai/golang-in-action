@@ -2,7 +2,7 @@ package endpoint
 
 import (
 	"errors"
-	"github.com/ZongweiBai/learning-go/core"
+	"github.com/ZongweiBai/learning-go/config"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"time"
@@ -18,7 +18,7 @@ import (
 // @Success 200 {object} JwtTokenMessage
 // @Router /v1/oauth/token [post]
 func GenerateAcessToken(c *gin.Context) {
-	core.LOG.Debugf("进入到GenerateAcessToken方法")
+	config.LOG.Debugf("进入到GenerateAcessToken方法")
 
 	jwtTokenMessage := JwtTokenMessage{}
 	err := c.BindJSON(&jwtTokenMessage)
@@ -27,7 +27,7 @@ func GenerateAcessToken(c *gin.Context) {
 	} else {
 		accessToken, err := generateToken(jwtTokenMessage.UserName, jwtTokenMessage.UserId)
 		if err != nil {
-			core.LOG.Errorf("生成Token失败:%s", err.Error())
+			config.LOG.Errorf("生成Token失败:%s", err.Error())
 			c.JSON(500, gin.H{"error_code": "server_error", "description": "Generate AccessToken Err"})
 			return
 		}
@@ -47,7 +47,7 @@ func GenerateAcessToken(c *gin.Context) {
 // @Success 200 {object} JwtTokenMessage
 // @Router /v1/oauth/token/validate [get]
 func ValidateAcessToken(c *gin.Context) {
-	core.LOG.Debugf("进入到ValidateAcessToken方法")
+	config.LOG.Debugf("进入到ValidateAcessToken方法")
 
 	accessToken := c.Query("accessToken")
 	if accessToken == "" {
@@ -55,7 +55,7 @@ func ValidateAcessToken(c *gin.Context) {
 	} else {
 		claims, err := validateToken(accessToken)
 		if err != nil {
-			core.LOG.Errorf("校验Token失败:%s", err.Error())
+			config.LOG.Errorf("校验Token失败:%s", err.Error())
 			c.JSON(500, gin.H{"error_code": "server_error", "description": "Validate AccessToken Err"})
 			return
 		}
@@ -86,17 +86,17 @@ func generateToken(username string, userId string) (string, error) {
 		username,
 		userId,
 		jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(time.Duration(core.CONFIG.Jwt.Expires) * time.Second).Unix(), // 过期时间
+			ExpiresAt: time.Now().Add(time.Duration(config.CONFIG.Jwt.Expires) * time.Second).Unix(), // 过期时间
 			Issuer:    "learning-go",
 		},
 	}
 
-	core.LOG.Infof("用户名：%s, ID: %s", username, userId)
+	config.LOG.Infof("用户名：%s, ID: %s", username, userId)
 	// 创建签名对象
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c)
-	core.LOG.Infof("Token: %s", token)
+	config.LOG.Infof("Token: %s", token)
 	// 使用指定的secret签名并获得完整的编码后的字符串token
-	accessToken, err := token.SignedString([]byte(core.CONFIG.Jwt.JwtSecret))
+	accessToken, err := token.SignedString([]byte(config.CONFIG.Jwt.JwtSecret))
 	return accessToken, err
 }
 
@@ -104,7 +104,7 @@ func generateToken(username string, userId string) (string, error) {
 func validateToken(tokenString string) (*MyClaims, error) {
 	// 解析Token
 	token, err := jwt.ParseWithClaims(tokenString, &MyClaims{}, func(token *jwt.Token) (i interface{}, err error) {
-		return []byte(core.CONFIG.Jwt.JwtSecret), nil
+		return []byte(config.CONFIG.Jwt.JwtSecret), nil
 	})
 
 	if err != nil {

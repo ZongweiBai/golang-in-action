@@ -3,12 +3,11 @@ package main
 import (
 	// "fmt"
 	"github.com/ZongweiBai/learning-go/config"
-	"github.com/ZongweiBai/learning-go/server"
 	"github.com/ZongweiBai/learning-go/core"
+	"github.com/ZongweiBai/learning-go/task"
 	_ "github.com/ZongweiBai/learning-go/docs"
 	"github.com/ZongweiBai/learning-go/repository"
 	"go.uber.org/zap"
-	"log"
 )
 
 // @title Learning-Go Swagger文档
@@ -27,19 +26,24 @@ import (
 // @BasePath /
 func main() {
 
-	core.VIPER = config.InitViper()
+	config.VIPER = config.InitViper()
 
 	var zapLogger *zap.Logger
-	zapLogger, core.LOG = config.InitLogger()
+	zapLogger, config.LOG = config.InitLogger()
 
-	server.InitWebServer(zapLogger)
+	// 初始化定时任务
+	task.SetupTasks()
 
-	log.SetFlags(log.Llongfile | log.Lmicroseconds | log.Ldate)
+	// 初始化tcp socket服务
+	go core.InitSocketServer()
+
+	// 初始化web服务器
+	core.InitWebServer(zapLogger)
 
 	userOne := repository.NewUser(1, "李四")
-	log.Printf("用户ID: %v, 用户名：%s", userOne.ID, userOne.Name)
+	config.LOG.Debugf("用户ID: %v, 用户名：%s", userOne.ID, userOne.Name)
 	userOne.ChangeId(12, userOne)
 	userOne.ChangeName("李四五")
-	log.Printf("用户ID: %v, 用户名：%s", userOne.ID, userOne.Name)
+	config.LOG.Debugf("用户ID: %v, 用户名：%s", userOne.ID, userOne.Name)
 
 }
