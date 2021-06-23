@@ -2,9 +2,10 @@ package core
 
 import (
 	"bufio"
-	"github.com/ZongweiBai/learning-go/config"
 	"net"
 	"strconv"
+
+	"github.com/ZongweiBai/golang-in-action/config"
 )
 
 func InitSocketServer() {

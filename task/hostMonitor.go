@@ -1,14 +1,15 @@
 package task
 
 import (
-	"github.com/ZongweiBai/learning-go/config"
+	"time"
+
+	"github.com/ZongweiBai/golang-in-action/config"
 	"github.com/shirou/gopsutil/cpu"
 	"github.com/shirou/gopsutil/disk"
 	"github.com/shirou/gopsutil/host"
 	"github.com/shirou/gopsutil/load"
 	"github.com/shirou/gopsutil/mem"
 	"github.com/shirou/gopsutil/net"
-	"time"
 )
 
 // cpu info
@@ -52,8 +53,8 @@ func GetDiskInfo() {
 	}
 	for _, part := range parts {
 		config.LOG.Infof("part:%v\n", part.String())
-		diskInfo, _ := disk.Usage(part.Mountpoint)
-		config.LOG.Infof("disk info:used:%v free:%v", diskInfo.UsedPercent, diskInfo.Free)
+		// diskInfo, _ := disk.Usage(part.Mountpoint)
+		// config.LOG.Infof("disk info:used:%v free:%v", diskInfo.UsedPercent, diskInfo.Free)
 	}
 
 	ioStat, _ := disk.IOCounters()

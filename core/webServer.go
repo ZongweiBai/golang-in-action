@@ -2,15 +2,6 @@ package core
 
 import (
 	"context"
-	"github.com/ZongweiBai/learning-go/config"
-	_ "github.com/ZongweiBai/learning-go/docs"
-	"github.com/ZongweiBai/learning-go/endpoint"
-	"github.com/ZongweiBai/learning-go/repository"
-	"github.com/gin-contrib/zap"
-	"github.com/gin-gonic/gin"
-	"github.com/swaggo/gin-swagger"
-	"github.com/swaggo/gin-swagger/swaggerFiles"
-	"go.uber.org/zap"
 	"log"
 	"net/http"
 	"os"
@@ -18,6 +9,17 @@ import (
 	"strconv"
 	"syscall"
 	"time"
+
+	"github.com/ZongweiBai/golang-in-action/config"
+	_ "github.com/ZongweiBai/golang-in-action/docs"
+	"github.com/ZongweiBai/golang-in-action/endpoint"
+	"github.com/ZongweiBai/golang-in-action/repository"
+	"github.com/gin-contrib/pprof"
+	ginzap "github.com/gin-contrib/zap"
+	"github.com/gin-gonic/gin"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
+	"go.uber.org/zap"
 )
 
 func InitWebServer(zapLogger *zap.Logger) {
@@ -27,6 +29,10 @@ func InitWebServer(zapLogger *zap.Logger) {
 	r.Use(ginzap.RecoveryWithZap(zapLogger, true))
 
 	r.Use(costTime())
+
+	// 性能监控
+	// http://localhost:8080/debug/pprof
+	pprof.Register(r)
 
 	// swagger docs
 	// http://localhost:8080/api-docs/swagger/index.html

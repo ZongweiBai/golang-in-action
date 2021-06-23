@@ -1,10 +1,10 @@
 package endpoint
 
 import (
+	"github.com/ZongweiBai/golang-in-action/config"
+	_ "github.com/ZongweiBai/golang-in-action/model"
+	"github.com/ZongweiBai/golang-in-action/repository"
 	"github.com/gin-gonic/gin"
-	"github.com/ZongweiBai/learning-go/repository"
-	"github.com/ZongweiBai/learning-go/config"
-	_ "github.com/ZongweiBai/learning-go/model"
 )
 
 // GetAdminHandler 获取Admin信息

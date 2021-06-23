@@ -68,9 +68,85 @@ var doc = `{
                     }
                 }
             }
+        },
+        "/v1/oauth/token": {
+            "post": {
+                "description": "通过用户信息生成JWTtoken",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Token相关接口"
+                ],
+                "summary": "生成JWTtoken",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Basic 用户令牌",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/endpoint.JwtTokenMessage"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/oauth/token/validate": {
+            "get": {
+                "description": "校验JWTtoken",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Token相关接口"
+                ],
+                "summary": "校验JWTtoken",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Basic 用户令牌",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/endpoint.JwtTokenMessage"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
+        "endpoint.JwtTokenMessage": {
+            "type": "object",
+            "properties": {
+                "accessToken": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "string"
+                },
+                "userName": {
+                    "type": "string"
+                }
+            }
+        },
         "repository.User": {
             "type": "object",
             "properties": {
@@ -100,7 +176,7 @@ var SwaggerInfo = swaggerInfo{
 	Host:        "127.0.0.1:8080",
 	BasePath:    "/",
 	Schemes:     []string{},
-	Title:       "Learning-Go Swagger文档",
+	Title:       "golang-in-action Swagger文档",
 	Description: "Go入门学习项目",
 }
 

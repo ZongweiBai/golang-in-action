@@ -1,8 +1,8 @@
 package task
 
 import (
+	"github.com/ZongweiBai/golang-in-action/config"
 	cron "github.com/robfig/cron/v3"
-	"github.com/ZongweiBai/learning-go/config"
 )
 
 func SetupTasks() {

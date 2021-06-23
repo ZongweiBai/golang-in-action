@@ -1,5 +1,14 @@
 basePath: /
 definitions:
+  endpoint.JwtTokenMessage:
+    properties:
+      accessToken:
+        type: string
+      userId:
+        type: string
+      userName:
+        type: string
+    type: object
   repository.User:
     properties:
       id:
@@ -18,7 +27,7 @@ info:
     name: MIT License
     url: https://opensource.org/licenses/MIT
   termsOfService: https://github.com/ZongweiBai
-  title: Learning-Go Swagger文档
+  title: golang-in-action Swagger文档
   version: "1.0"
 paths:
   /v1/admin/users:
@@ -43,4 +52,44 @@ paths:
       summary: 获取Admin信息
       tags:
       - Admin相关接口
+  /v1/oauth/token:
+    post:
+      consumes:
+      - application/json
+      description: 通过用户信息生成JWTtoken
+      parameters:
+      - description: Basic 用户令牌
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/endpoint.JwtTokenMessage'
+      summary: 生成JWTtoken
+      tags:
+      - Token相关接口
+  /v1/oauth/token/validate:
+    get:
+      consumes:
+      - application/json
+      description: 校验JWTtoken
+      parameters:
+      - description: Basic 用户令牌
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/endpoint.JwtTokenMessage'
+      summary: 校验JWTtoken
+      tags:
+      - Token相关接口
 swagger: "2.0"

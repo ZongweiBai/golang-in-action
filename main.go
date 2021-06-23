@@ -2,15 +2,15 @@ package main
 
 import (
 	// "fmt"
-	"github.com/ZongweiBai/learning-go/config"
-	"github.com/ZongweiBai/learning-go/core"
-	"github.com/ZongweiBai/learning-go/task"
-	_ "github.com/ZongweiBai/learning-go/docs"
-	"github.com/ZongweiBai/learning-go/repository"
+	"github.com/ZongweiBai/golang-in-action/config"
+	"github.com/ZongweiBai/golang-in-action/core"
+	_ "github.com/ZongweiBai/golang-in-action/docs"
+	"github.com/ZongweiBai/golang-in-action/repository"
+	"github.com/ZongweiBai/golang-in-action/task"
 	"go.uber.org/zap"
 )
 
-// @title Learning-Go Swagger文档
+// @title golang-in-action Swagger文档
 // @version 1.0
 // @description Go入门学习项目
 // @termsOfService https://github.com/ZongweiBai
@@ -30,6 +30,8 @@ func main() {
 
 	var zapLogger *zap.Logger
 	zapLogger, config.LOG = config.InitLogger()
+
+	config.InitRedis()
 
 	// 初始化定时任务
 	task.SetupTasks()

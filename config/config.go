@@ -8,6 +8,8 @@ type Config struct {
 	Jwt Jwt `mapstructure:"jwt" json:"jwt" yaml:"jwt"`
 	// socket服务配置
 	Socket Socket `mapstructure:"socket" json:"socket" yaml:"socket"`
+	// Redis服务配置
+	Redis Redis `mapstructure:"redis" json:"redis" yaml:"redis"`
 }
 
 const (
@@ -39,4 +41,17 @@ type Socket struct {
 	Host string `mapstructure:"host" json:"host" yaml:"host"`
 	// port
 	Port int `mapstructure:"port" json:"port" yaml:"port"`
+}
+
+type Redis struct {
+	// host
+	Host string `mapstructure:"host" json:"host" yaml:"host"`
+	// port
+	Port int `mapstructure:"port" json:"port" yaml:"port"`
+	// password
+	Password string `mapstructure:"password" json:"password" yaml:"password"`
+	// db
+	DB int `mapstructure:"db" json:"db" yaml:"db"`
+	// poolsize
+	PoolSize int `mapstructure:"poolsize" json:"poolsize"`
 }

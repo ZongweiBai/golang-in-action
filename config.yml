@@ -3,9 +3,16 @@ log:
   level: DEBUG
 
 jwt:
-  secret: learing_go_jwt_secret
+  secret: golang_in_action_jwt_secret
   expires: 3600
 
 socket:
   host: 127.0.0.1
   port: 19000
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password:
+  db: 0
+  poolsize: 10

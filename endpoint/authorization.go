@@ -1,11 +1,13 @@
 package endpoint
 
 import (
+	"context"
 	"errors"
-	"github.com/ZongweiBai/learning-go/config"
+	"time"
+
+	"github.com/ZongweiBai/golang-in-action/config"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"time"
 )
 
 // GenerateAcessToken 生成JWTtoken
@@ -31,6 +33,9 @@ func GenerateAcessToken(c *gin.Context) {
 			c.JSON(500, gin.H{"error_code": "server_error", "description": "Generate AccessToken Err"})
 			return
 		}
+
+		// 写入到redis中
+		config.RDB.Set(context.Background(), "token:"+jwtTokenMessage.UserName, accessToken, (time.Duration(config.CONFIG.Jwt.Expires) * time.Second))
 
 		jwtTokenMessage.AccessToken = accessToken
 		c.JSON(200, &jwtTokenMessage)
@@ -87,7 +92,7 @@ func generateToken(username string, userId string) (string, error) {
 		userId,
 		jwt.StandardClaims{
 			ExpiresAt: time.Now().Add(time.Duration(config.CONFIG.Jwt.Expires) * time.Second).Unix(), // 过期时间
-			Issuer:    "learning-go",
+			Issuer:    "golang-in-action",
 		},
 	}
 
