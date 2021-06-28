@@ -9156,3 +9156,100 @@
 2021/06/25 23:27:18.006	[34mINFO[0m	core/web_server.go:159	Server exiting
 2021/06/25 23:27:18.006	[35mDEBUG[0m	learning-go/main.go:46	用户ID: 1, 用户名：李四
 2021/06/25 23:27:18.006	[35mDEBUG[0m	learning-go/main.go:49	用户ID: 12, 用户名：李四五
+2021/06/29 00:02:14.006	[34mINFO[0m	task/task.go:9	初始化定时任务
+2021/06/29 00:02:22.006	[34mINFO[0m	core/web_server.go:151	Shutdown Server ...
+2021/06/29 00:02:22.006	[34mINFO[0m	core/web_server.go:159	Server exiting
+2021/06/29 00:02:22.006	[35mDEBUG[0m	learning-go/main.go:49	用户ID: 1, 用户名：李四
+2021/06/29 00:02:22.006	[35mDEBUG[0m	learning-go/main.go:52	用户ID: 12, 用户名：李四五
+2021/06/29 00:14:09.006	[34mINFO[0m	core/mqtt_client.go:15	Connected
+2021/06/29 00:14:09.006	[34mINFO[0m	core/mqtt_client.go:11	Received message: {
+  "msg": "hello"
+} from topic: topic/test
+2021/06/29 00:14:10.006	[34mINFO[0m	core/mqtt_client.go:11	Received message: Message 0 from topic: topic/test
+2021/06/29 00:14:11.006	[34mINFO[0m	core/mqtt_client.go:11	Received message: Message 1 from topic: topic/test
+2021/06/29 00:14:12.006	[34mINFO[0m	core/mqtt_client.go:11	Received message: Message 2 from topic: topic/test
+2021/06/29 00:14:13.006	[34mINFO[0m	core/mqtt_client.go:11	Received message: Message 3 from topic: topic/test
+2021/06/29 00:14:14.006	[34mINFO[0m	core/mqtt_client.go:11	Received message: Message 4 from topic: topic/test
+2021/06/29 00:14:15.006	[34mINFO[0m	core/mqtt_client.go:11	Received message: Message 5 from topic: topic/test
+2021/06/29 00:14:16.006	[34mINFO[0m	core/mqtt_client.go:11	Received message: Message 6 from topic: topic/test
+2021/06/29 00:14:17.006	[34mINFO[0m	core/mqtt_client.go:11	Received message: Message 7 from topic: topic/test
+2021/06/29 00:14:18.006	[34mINFO[0m	core/mqtt_client.go:11	Received message: Message 8 from topic: topic/test
+2021/06/29 00:14:19.006	[34mINFO[0m	core/mqtt_client.go:11	Received message: Message 9 from topic: topic/test
+2021/06/29 00:14:19.006	[34mINFO[0m	task/task.go:9	初始化定时任务
+2021/06/29 00:15:19.006	[35mDEBUG[0m	task/task.go:16	====================>>>>
+2021/06/29 00:15:19.006	[34mINFO[0m	task/host_monitor.go:22	{"cpu":0,"vendorId":"GenuineIntel","family":"6","model":"69","stepping":1,"physicalId":"0","coreId":"0","cores":1,"modelName":"Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz","mhz":2700,"cacheSize":3072,"flags":["fpu","vme","de","pse","tsc","msr","pae","mce","cx8","apic","sep","mtrr","pge","mca","cmov","pat","pse36","clflush","dts","acpi","mmx","fxsr","sse","sse2","ss","ht","tm","pbe","syscall","nx","pdpe1gb","rdtscp","lm","constant_tsc","arch_perfmon","pebs","bts","rep_good","nopl","xtopology","nonstop_tsc","cpuid","aperfmperf","pni","pclmulqdq","dtes64","monitor","ds_cpl","vmx","est","tm2","ssse3","sdbg","fma","cx16","xtpr","pdcm","pcid","sse4_1","sse4_2","movbe","popcnt","tsc_deadline_timer","xsave","avx","f16c","rdrand","lahf_lm","abm","cpuid_fault","epb","invpcid_single","pti","ssbd","ibrs","ibpb","stibp","tpr_shadow","vnmi","flexpriority","ept","vpid","ept_ad","fsgsbase","tsc_adjust","bmi1","avx2","smep","bmi2","erms","invpcid","xsaveopt","dtherm","ida","arat","pln","pts","md_clear","flush_l1d"],"microcode":"0x26"}
+2021/06/29 00:15:19.006	[34mINFO[0m	task/host_monitor.go:22	{"cpu":1,"vendorId":"GenuineIntel","family":"6","model":"69","stepping":1,"physicalId":"0","coreId":"0","cores":1,"modelName":"Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz","mhz":2700,"cacheSize":3072,"flags":["fpu","vme","de","pse","tsc","msr","pae","mce","cx8","apic","sep","mtrr","pge","mca","cmov","pat","pse36","clflush","dts","acpi","mmx","fxsr","sse","sse2","ss","ht","tm","pbe","syscall","nx","pdpe1gb","rdtscp","lm","constant_tsc","arch_perfmon","pebs","bts","rep_good","nopl","xtopology","nonstop_tsc","cpuid","aperfmperf","pni","pclmulqdq","dtes64","monitor","ds_cpl","vmx","est","tm2","ssse3","sdbg","fma","cx16","xtpr","pdcm","pcid","sse4_1","sse4_2","movbe","popcnt","tsc_deadline_timer","xsave","avx","f16c","rdrand","lahf_lm","abm","cpuid_fault","epb","invpcid_single","pti","ssbd","ibrs","ibpb","stibp","tpr_shadow","vnmi","flexpriority","ept","vpid","ept_ad","fsgsbase","tsc_adjust","bmi1","avx2","smep","bmi2","erms","invpcid","xsaveopt","dtherm","ida","arat","pln","pts","md_clear","flush_l1d"],"microcode":"0x26"}
+2021/06/29 00:15:19.006	[34mINFO[0m	task/host_monitor.go:22	{"cpu":2,"vendorId":"GenuineIntel","family":"6","model":"69","stepping":1,"physicalId":"0","coreId":"1","cores":1,"modelName":"Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz","mhz":2700,"cacheSize":3072,"flags":["fpu","vme","de","pse","tsc","msr","pae","mce","cx8","apic","sep","mtrr","pge","mca","cmov","pat","pse36","clflush","dts","acpi","mmx","fxsr","sse","sse2","ss","ht","tm","pbe","syscall","nx","pdpe1gb","rdtscp","lm","constant_tsc","arch_perfmon","pebs","bts","rep_good","nopl","xtopology","nonstop_tsc","cpuid","aperfmperf","pni","pclmulqdq","dtes64","monitor","ds_cpl","vmx","est","tm2","ssse3","sdbg","fma","cx16","xtpr","pdcm","pcid","sse4_1","sse4_2","movbe","popcnt","tsc_deadline_timer","xsave","avx","f16c","rdrand","lahf_lm","abm","cpuid_fault","epb","invpcid_single","pti","ssbd","ibrs","ibpb","stibp","tpr_shadow","vnmi","flexpriority","ept","vpid","ept_ad","fsgsbase","tsc_adjust","bmi1","avx2","smep","bmi2","erms","invpcid","xsaveopt","dtherm","ida","arat","pln","pts","md_clear","flush_l1d"],"microcode":"0x26"}
+2021/06/29 00:15:19.006	[34mINFO[0m	task/host_monitor.go:22	{"cpu":3,"vendorId":"GenuineIntel","family":"6","model":"69","stepping":1,"physicalId":"0","coreId":"1","cores":1,"modelName":"Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz","mhz":2700,"cacheSize":3072,"flags":["fpu","vme","de","pse","tsc","msr","pae","mce","cx8","apic","sep","mtrr","pge","mca","cmov","pat","pse36","clflush","dts","acpi","mmx","fxsr","sse","sse2","ss","ht","tm","pbe","syscall","nx","pdpe1gb","rdtscp","lm","constant_tsc","arch_perfmon","pebs","bts","rep_good","nopl","xtopology","nonstop_tsc","cpuid","aperfmperf","pni","pclmulqdq","dtes64","monitor","ds_cpl","vmx","est","tm2","ssse3","sdbg","fma","cx16","xtpr","pdcm","pcid","sse4_1","sse4_2","movbe","popcnt","tsc_deadline_timer","xsave","avx","f16c","rdrand","lahf_lm","abm","cpuid_fault","epb","invpcid_single","pti","ssbd","ibrs","ibpb","stibp","tpr_shadow","vnmi","flexpriority","ept","vpid","ept_ad","fsgsbase","tsc_adjust","bmi1","avx2","smep","bmi2","erms","invpcid","xsaveopt","dtherm","ida","arat","pln","pts","md_clear","flush_l1d"],"microcode":"0x26"}
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:26	cpu percent:[17.369727047169476]
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:32	CPU load:{"load1":2.08,"load5":2.3,"load15":2.01}
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:38	mem info:{"total":8024186880,"available":2587041792,"used":4379590656,"usedPercent":54.579868608443974,"free":462831616,"active":2376335360,"inactive":4460863488,"wired":0,"laundry":0,"buffers":137412608,"cached":3044352000,"writeback":0,"dirty":581632,"writebacktmp":0,"shared":775016448,"slab":255524864,"sreclaimable":141012992,"sunreclaim":114511872,"pagetables":51650560,"swapcached":127176704,"commitlimit":13461016576,"committedas":15840702464,"hightotal":0,"highfree":0,"lowtotal":0,"lowfree":0,"swaptotal":9448923136,"swapfree":8582295552,"mapped":969859072,"vmalloctotal":35184372087808,"vmallocused":48902144,"vmallocchunk":0,"hugepagestotal":0,"hugepagesfree":0,"hugepagesize":2097152}
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:44	host info:{"hostname":"X240-Manjaro","uptime":270450,"bootTime":1624626470,"procs":237,"os":"linux","platform":"arch","platformFamily":"arch","platformVersion":"21.0.7","kernelVersion":"5.9.16-1-MANJARO","kernelArch":"x86_64","virtualizationSystem":"kvm","virtualizationRole":"host","hostid":"2324ca3b-fc01-4f61-a585-a7d74836a3ec"} uptime:270450 boottime:1624626470
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"proc","mountpoint":"/proc","fstype":"proc","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"sys","mountpoint":"/sys","fstype":"sysfs","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"dev","mountpoint":"/dev","fstype":"devtmpfs","opts":"rw,nosuid,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"run","mountpoint":"/run","fstype":"tmpfs","opts":"rw,nosuid,nodev,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"/dev/sdb1","mountpoint":"/","fstype":"ext4","opts":"rw,noatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"securityfs","mountpoint":"/sys/kernel/security","fstype":"securityfs","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"tmpfs","mountpoint":"/dev/shm","fstype":"tmpfs","opts":"rw,nosuid,nodev"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"devpts","mountpoint":"/dev/pts","fstype":"devpts","opts":"rw,nosuid,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"cgroup2","mountpoint":"/sys/fs/cgroup","fstype":"cgroup2","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"pstore","mountpoint":"/sys/fs/pstore","fstype":"pstore","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"none","mountpoint":"/sys/fs/bpf","fstype":"bpf","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"systemd-1","mountpoint":"/proc/sys/fs/binfmt_misc","fstype":"autofs","opts":"rw,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"hugetlbfs","mountpoint":"/dev/hugepages","fstype":"hugetlbfs","opts":"rw,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"mqueue","mountpoint":"/dev/mqueue","fstype":"mqueue","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"debugfs","mountpoint":"/sys/kernel/debug","fstype":"debugfs","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"tracefs","mountpoint":"/sys/kernel/tracing","fstype":"tracefs","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"configfs","mountpoint":"/sys/kernel/config","fstype":"configfs","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"binfmt_misc","mountpoint":"/proc/sys/fs/binfmt_misc","fstype":"binfmt_misc","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"fusectl","mountpoint":"/sys/fs/fuse/connections","fstype":"fusectl","opts":"rw,nosuid,nodev,noexec,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"tmpfs","mountpoint":"/tmp","fstype":"tmpfs","opts":"rw,noatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"/dev/sda1","mountpoint":"/home/zongwei/data","fstype":"fuseblk","opts":"rw,nosuid,nodev,noatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"tmpfs","mountpoint":"/run/user/1000","fstype":"tmpfs","opts":"rw,nosuid,nodev,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"overlay","mountpoint":"/var/lib/docker/overlay2/3c76e084bbb96cdcdc9fd9577315146394808b028255ccaf6b87d74d0eb0c12d/merged","fstype":"overlay","opts":"rw,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"nsfs","mountpoint":"/run/docker/netns/383aed02dc9c","fstype":"nsfs","opts":"bind,rw"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"gvfsd-fuse","mountpoint":"/run/user/1000/gvfs","fstype":"fuse.gvfsd-fuse","opts":"rw,nosuid,nodev,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:55	part:{"device":"portal","mountpoint":"/run/user/1000/doc","fstype":"fuse.portal","opts":"rw,nosuid,nodev,relatime"}
+
+2021/06/29 00:15:20.006	[34mINFO[0m	core/web_server.go:151	Shutdown Server ...
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:62	iostat:sda:{"readCount":12206,"mergedReadCount":7,"writeCount":5416,"mergedWriteCount":713715,"readBytes":1085327360,"writeBytes":2945495040,"readTime":36776,"writeTime":190427,"iopsInProgress":0,"ioTime":99340,"weightedIO":229010,"name":"sda","serialNumber":"","label":""}
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:62	iostat:sda1:{"readCount":12001,"mergedReadCount":0,"writeCount":5400,"mergedWriteCount":713715,"readBytes":1084035072,"writeBytes":2945495040,"readTime":34401,"writeTime":188620,"iopsInProgress":0,"ioTime":95030,"weightedIO":223022,"name":"sda1","serialNumber":"","label":""}
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:62	iostat:sdb:{"readCount":204332,"mergedReadCount":53010,"writeCount":572684,"mergedWriteCount":240979,"readBytes":8016579072,"writeBytes":12380483584,"readTime":159047,"writeTime":577241,"iopsInProgress":0,"ioTime":423987,"weightedIO":831494,"name":"sdb","serialNumber":"","label":""}
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:62	iostat:sdb1:{"readCount":203673,"mergedReadCount":52564,"writeCount":511514,"mergedWriteCount":231048,"readBytes":8008537600,"writeBytes":12207218688,"readTime":158380,"writeTime":517617,"iopsInProgress":0,"ioTime":408987,"weightedIO":675998,"name":"sdb1","serialNumber":"","label":""}
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:62	iostat:sdb2:{"readCount":426,"mergedReadCount":432,"writeCount":1260,"mergedWriteCount":9931,"readBytes":5712896,"writeBytes":173264896,"readTime":480,"writeTime":7030,"iopsInProgress":0,"ioTime":4330,"weightedIO":7511,"name":"sdb2","serialNumber":"","label":""}
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:69	0:{"name":"lo","bytesSent":394026486,"bytesRecv":394026486,"packetsSent":343178,"packetsRecv":343178,"errin":0,"errout":0,"dropin":0,"dropout":0,"fifoin":0,"fifoout":0} send:394026486 recv:394026486
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:69	1:{"name":"enp0s25","bytesSent":0,"bytesRecv":0,"packetsSent":0,"packetsRecv":0,"errin":0,"errout":0,"dropin":0,"dropout":0,"fifoin":0,"fifoout":0} send:0 recv:0
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:69	2:{"name":"wlp3s0","bytesSent":1058085223,"bytesRecv":3860231742,"packetsSent":1729317,"packetsRecv":3026595,"errin":0,"errout":0,"dropin":0,"dropout":0,"fifoin":0,"fifoout":0} send:1058085223 recv:3860231742
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:69	3:{"name":"docker0","bytesSent":0,"bytesRecv":0,"packetsSent":0,"packetsRecv":0,"errin":0,"errout":0,"dropin":0,"dropout":0,"fifoin":0,"fifoout":0} send:0 recv:0
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:69	4:{"name":"br-518bdcb03a7e","bytesSent":12633,"bytesRecv":1399,"packetsSent":106,"packetsRecv":31,"errin":0,"errout":0,"dropin":0,"dropout":0,"fifoin":0,"fifoout":0} send:12633 recv:1399
+2021/06/29 00:15:20.006	[34mINFO[0m	task/host_monitor.go:69	5:{"name":"vetha5e48b1","bytesSent":17965,"bytesRecv":1833,"packetsSent":145,"packetsRecv":31,"errin":0,"errout":0,"dropin":0,"dropout":0,"fifoin":0,"fifoout":0} send:17965 recv:1833
+2021/06/29 00:15:20.006	[35mDEBUG[0m	task/task.go:23	====================>>>>
+2021/06/29 00:15:20.006	[34mINFO[0m	core/web_server.go:159	Server exiting
+2021/06/29 00:15:20.006	[35mDEBUG[0m	learning-go/main.go:49	用户ID: 1, 用户名：李四
+2021/06/29 00:15:20.006	[35mDEBUG[0m	learning-go/main.go:52	用户ID: 12, 用户名：李四五

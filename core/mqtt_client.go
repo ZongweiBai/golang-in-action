@@ -1,59 +1,57 @@
 package core
 
 import (
-    "fmt"
-    mqtt "github.com/eclipse/paho.mqtt.golang"
-    "log"
-    "time"
+	"fmt"
+	"github.com/ZongweiBai/golang-in-action/config"
+	mqtt "github.com/eclipse/paho.mqtt.golang"
+	"time"
 )
 
 var messagePubHandler mqtt.MessageHandler = func(client mqtt.Client, msg mqtt.Message) {
-    fmt.Printf("Received message: %s from topic: %s\n", msg.Payload(), msg.Topic())
+	config.LOG.Infof("Received message: %s from topic: %s", msg.Payload(), msg.Topic())
 }
 
 var connectHandler mqtt.OnConnectHandler = func(client mqtt.Client) {
-    fmt.Println("Connected")
+	config.LOG.Infof("Connected")
 }
 
 var connectLostHandler mqtt.ConnectionLostHandler = func(client mqtt.Client, err error) {
-    fmt.Printf("Connect lost: %v", err)
+	config.LOG.Errorf("Connect lost: %v", err)
 }
 
 func InitMqttClient() {
-	var broker = "broker.emqx.io"
-    var port = 1883
-    opts := mqtt.NewClientOptions()
-    opts.AddBroker(fmt.Sprintf("tcp://%s:%d", broker, port))
-    opts.SetClientID("go_mqtt_client")
-    opts.SetUsername("emqx")
-    opts.SetPassword("public")
-    opts.SetDefaultPublishHandler(messagePubHandler)
-    opts.OnConnect = connectHandler
-    opts.OnConnectionLost = connectLostHandler
-    client := mqtt.NewClient(opts)
-    if token := client.Connect(); token.Wait() && token.Error() != nil {
-        panic(token.Error())
-    }
+	opts := mqtt.NewClientOptions()
+	opts.AddBroker(fmt.Sprintf("tcp://%s:%d", config.CONFIG.MQTT.Broker, config.CONFIG.MQTT.Port))
+	opts.SetClientID(config.CONFIG.MQTT.ClientId)
+	opts.SetUsername(config.CONFIG.MQTT.UserName)
+	opts.SetPassword(config.CONFIG.MQTT.Password)
+	opts.SetDefaultPublishHandler(messagePubHandler)
+	opts.OnConnect = connectHandler
+	opts.OnConnectionLost = connectLostHandler
+	client := mqtt.NewClient(opts)
+	if token := client.Connect(); token.Wait() && token.Error() != nil {
+		panic(token.Error())
+	}
+	defer client.Disconnect(100)
 
-    sub(client)
-    publish(client)
+	sub(client)
+	publish(client)
 
-    client.Disconnect(250)
 }
 
 func publish(client mqtt.Client) {
-    num := 10
-    for i := 0; i < num; i++ {
-        text := fmt.Sprintf("Message %d", i)
-        token := client.Publish("topic/test", 0, false, text)
-        token.Wait()
-        time.Sleep(time.Second)
-    }
+	num := 10
+	for i := 0; i < num; i++ {
+		text := fmt.Sprintf("Message %d", i)
+		token := client.Publish("topic/test", 0, false, text)
+		token.Wait()
+		time.Sleep(time.Second)
+	}
 }
 
 func sub(client mqtt.Client) {
-    topic := "topic/test"
-    token := client.Subscribe(topic, 1, nil)
-    token.Wait()
-  fmt.Printf("Subscribed to topic: %s", topic)
+	topic := config.CONFIG.MQTT.Topics
+	token := client.Subscribe(topic, 1, nil)
+	token.Wait()
+	config.LOG.Infof("Subscribed to topic: %s", topic)
 }

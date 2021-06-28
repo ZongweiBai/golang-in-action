@@ -10,6 +10,8 @@ type Config struct {
 	Socket Socket `mapstructure:"socket" json:"socket" yaml:"socket"`
 	// Redis服务配置
 	Redis Redis `mapstructure:"redis" json:"redis" yaml:"redis"`
+	// MQTT服务配置
+	MQTT MQTT `mapstructure:"mqtt" json:"mqtt" yaml:"mqtt"`
 }
 
 const (
@@ -54,4 +56,14 @@ type Redis struct {
 	DB int `mapstructure:"db" json:"db" yaml:"db"`
 	// poolsize
 	PoolSize int `mapstructure:"poolsize" json:"poolsize"`
+}
+
+type MQTT struct {
+	// broker
+	Broker string `mapstructure:"broker" json:"broker" yaml:"broker"`
+	Port int `mapstructure:"port" json:"port" yaml:"port"`
+	ClientId string `mapstructure:"clientId" json:"clientId" yaml:"clientId"`
+	UserName string `mapstructure:"userName" json:"userName" yaml:"userName"`
+	Password string `mapstructure:"password" json:"password" yaml:"password"`
+	Topics string `mapstructure:"topics" json:"topics" yaml:"topics"`
 }

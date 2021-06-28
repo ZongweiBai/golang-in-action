@@ -6,6 +6,7 @@ require (
 	github.com/StackExchange/wmi v0.0.0-20210224194228-fe8f1750fd46 // indirect
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/eclipse/paho.mqtt.golang v1.3.5
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/gin-contrib/pprof v1.3.0
 	github.com/gin-contrib/zap v0.0.1

@@ -16,3 +16,11 @@ redis:
   password:
   db: 0
   poolsize: 10
+
+mqtt:
+  broker: broker.emqx.io
+  port: 1883
+  clientId: go_mqtt_client
+  userName: emqx
+  password: public
+  topics: topic/test
