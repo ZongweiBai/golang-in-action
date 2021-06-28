@@ -2,10 +2,12 @@ package core
 
 import (
 	"bufio"
+	"io"
 	"net"
 	"strconv"
 
 	"github.com/ZongweiBai/golang-in-action/config"
+	"github.com/ZongweiBai/golang-in-action/core/proto"
 )
 
 func InitSocketServer() {
@@ -27,16 +29,30 @@ func InitSocketServer() {
 // 处理函数
 func process(conn net.Conn) {
 	defer conn.Close() // 关闭连接
+	reader := bufio.NewReader(conn)
 	for {
-		reader := bufio.NewReader(conn)
-		var buf [128]byte
-		n, err := reader.Read(buf[:]) // 读取数据
-		if err != nil {
-			config.LOG.Errorf("read from client failed, err:", err)
-			break
+		recvStr, err := proto.Decode(reader)
+		if err == io.EOF {
+			return
 		}
-		recvStr := string(buf[:n])
+		if err != nil {
+			config.LOG.Errorf("decode msg failed", err)
+			return
+		}
+		// var buf [128]byte
+		// n, err := reader.Read(buf[:]) // 读取数据
+		// if err != nil {
+		// 	config.LOG.Errorf("read from client failed, err:", err)
+		// 	break
+		// }
+		// recvStr := string(buf[:n])
 		config.LOG.Infof("收到client端发来的数据：%s", recvStr)
-		conn.Write([]byte(recvStr)) // 发送数据
+		// conn.Write([]byte(recvStr)) // 发送数据
+		data, err := proto.Encode(recvStr)
+		if err != nil {
+			config.LOG.Errorf("encode msg failed", err)
+			return
+		}
+		conn.Write(data)
 	}
 }
