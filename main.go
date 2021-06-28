@@ -33,6 +33,9 @@ func main() {
 
 	config.InitRedis()
 
+	// 初始化MQTT客户端
+	core.InitMqttClient()
+
 	// 初始化定时任务
 	task.SetupTasks()
 
