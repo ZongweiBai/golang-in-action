@@ -24,3 +24,9 @@ mqtt:
   userName: emqx
   password: public
   topics: topic/test
+
+datasource:
+  dialect: postgres
+  url: host=myhost port=54320 user=postgres dbname=golang-in-action password=root
+  maxPoolSize: 8
+  minIdle: 2
