@@ -31,17 +31,15 @@ func main() {
 	var zapLogger *zap.Logger
 	zapLogger, config.LOG = config.InitLogger()
 
+	config.InitSnowflake()
 	config.InitRedis()
-
+	config.InitDbConn()
 	// 初始化MQTT客户端
 	core.InitMqttClient()
-
 	// 初始化定时任务
 	task.SetupTasks()
-
 	// 初始化tcp socket服务
 	go core.InitSocketServer()
-
 	// 初始化web服务器
 	core.InitWebServer(zapLogger)
 

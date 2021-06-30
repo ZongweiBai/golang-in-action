@@ -19,5 +19,6 @@ import (
 // @Router /v1/admin/users [get]
 func AdminHandler(c *gin.Context) {
 	config.LOG.Debugf("进入到AdminHandler方法：%s", "李三四")
+	repository.SaveUserInfo()
 	c.JSON(200, &repository.User{ID: 20001, Name: "李三四"})
 }

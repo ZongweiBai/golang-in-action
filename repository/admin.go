@@ -27,3 +27,4 @@ func (u User) ChangeId(id uint64, user *User) {
 func (u *User) ChangeName(name string) {
 	u.Name = name
 }
+

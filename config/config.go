@@ -12,6 +12,8 @@ type Config struct {
 	Redis Redis `mapstructure:"redis" json:"redis" yaml:"redis"`
 	// MQTT服务配置
 	MQTT MQTT `mapstructure:"mqtt" json:"mqtt" yaml:"mqtt"`
+	// 数据源配置
+	DataSource DataSource `mapstructure:"datasource" json:"datasource" yaml:"datasource"`
 }
 
 const (
@@ -66,4 +68,12 @@ type MQTT struct {
 	UserName string `mapstructure:"userName" json:"userName" yaml:"userName"`
 	Password string `mapstructure:"password" json:"password" yaml:"password"`
 	Topics string `mapstructure:"topics" json:"topics" yaml:"topics"`
+}
+
+type DataSource struct {
+	Dialect string `mapstructure:"dialect" json:"dialect" yaml:"dialect"`
+	Scheme string `mapstructure:"scheme" json:"scheme" yaml:"scheme"`
+	Url string `mapstructure:"url" json:"url" yaml:"url"`
+	MaxPoolSize int `mapstructure:"maxPoolSize" json:"maxPoolSize" yaml:"maxPoolSize"`
+	MinIdle int `mapstructure:"minIdle" json:"minIdle" yaml:"minIdle"`
 }

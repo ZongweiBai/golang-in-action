@@ -27,6 +27,7 @@ mqtt:
 
 datasource:
   dialect: postgres
-  url: host=myhost port=54320 user=postgres dbname=golang-in-action password=root
+  schema: public
+  url: host=127.0.0.1 port=54320 user=postgres dbname=golang password=root sslmode=disable
   maxPoolSize: 8
   minIdle: 2
