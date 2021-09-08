@@ -14,9 +14,11 @@ import (
 	_ "github.com/ZongweiBai/golang-in-action/docs"
 	"github.com/ZongweiBai/golang-in-action/endpoint"
 	"github.com/ZongweiBai/golang-in-action/repository"
+	"github.com/chenjiandongx/ginprom"
 	"github.com/gin-contrib/pprof"
 	ginzap "github.com/gin-contrib/zap"
 	"github.com/gin-gonic/gin"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	"go.uber.org/zap"
@@ -27,12 +29,29 @@ func InitWebServer(zapLogger *zap.Logger) {
 	r := gin.New()
 	r.Use(ginzap.Ginzap(zapLogger, time.RFC3339, true))
 	r.Use(ginzap.RecoveryWithZap(zapLogger, true))
-
+	// use prometheus metrics exporter middleware.
+	//
+	// ginprom.PromMiddleware() expects a ginprom.PromOpts{} poniter.
+	// It is used for filtering labels by regex. `nil` will pass every requests.
+	//
+	// ginprom promethues-labels:
+	//   `status`, `endpoint`, `method`
+	//
+	// for example:
+	// 1). I don't want to record the 404 status request. That's easy for it.
+	// ginprom.PromMiddleware(&ginprom.PromOpts{ExcludeRegexStatus: "404"})
+	//
+	// 2). And I wish to ignore endpoints started with `/prefix`.
+	// ginprom.PromMiddleware(&ginprom.PromOpts{ExcludeRegexEndpoint: "^/prefix"})
+	r.Use(ginprom.PromMiddleware(nil))
 	r.Use(costTime())
 
 	// 性能监控
 	// http://localhost:8080/debug/pprof
 	pprof.Register(r)
+
+	// register the `/metrics` route.
+	r.GET("/metrics", ginprom.PromHandler(promhttp.Handler()))
 
 	// swagger docs
 	// http://localhost:8080/api-docs/swagger/index.html
