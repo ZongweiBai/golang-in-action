@@ -20,6 +20,9 @@ var connectLostHandler mqtt.ConnectionLostHandler = func(client mqtt.Client, err
 }
 
 func InitMqttClient() {
+	if config.CONFIG.MQTT.Enabled == false {
+		return
+	}
 	opts := mqtt.NewClientOptions()
 	opts.AddBroker(fmt.Sprintf("tcp://%s:%d", config.CONFIG.MQTT.Broker, config.CONFIG.MQTT.Port))
 	opts.SetClientID(config.CONFIG.MQTT.ClientId)
@@ -36,7 +39,6 @@ func InitMqttClient() {
 
 	sub(client)
 	publish(client)
-
 }
 
 func publish(client mqtt.Client) {

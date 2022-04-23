@@ -9,9 +9,12 @@ import (
 var dsOnce sync.Once
 
 func InitDbConn() {
+	if CONFIG.DataSource.Enabled == false {
+		return
+	}
 	dsOnce.Do(func() {
 		var dialet = "postgres"
-		if (CONFIG.DataSource.Dialect != "") {
+		if CONFIG.DataSource.Dialect != "" {
 			dialet = CONFIG.DataSource.Dialect
 		}
 		db, err := gorm.Open(dialet, CONFIG.DataSource.Url)

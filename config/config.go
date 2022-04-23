@@ -48,6 +48,7 @@ type Socket struct {
 }
 
 type Redis struct {
+	Enabled bool `mapstructure:"enabled" json:"enabled" yaml:"enabled"`
 	// host
 	Host string `mapstructure:"host" json:"host" yaml:"host"`
 	// port
@@ -61,19 +62,21 @@ type Redis struct {
 }
 
 type MQTT struct {
+	Enabled bool `mapstructure:"enabled" json:"enabled" yaml:"enabled"`
 	// broker
-	Broker string `mapstructure:"broker" json:"broker" yaml:"broker"`
-	Port int `mapstructure:"port" json:"port" yaml:"port"`
+	Broker   string `mapstructure:"broker" json:"broker" yaml:"broker"`
+	Port     int    `mapstructure:"port" json:"port" yaml:"port"`
 	ClientId string `mapstructure:"clientId" json:"clientId" yaml:"clientId"`
 	UserName string `mapstructure:"userName" json:"userName" yaml:"userName"`
 	Password string `mapstructure:"password" json:"password" yaml:"password"`
-	Topics string `mapstructure:"topics" json:"topics" yaml:"topics"`
+	Topics   string `mapstructure:"topics" json:"topics" yaml:"topics"`
 }
 
 type DataSource struct {
-	Dialect string `mapstructure:"dialect" json:"dialect" yaml:"dialect"`
-	Scheme string `mapstructure:"scheme" json:"scheme" yaml:"scheme"`
-	Url string `mapstructure:"url" json:"url" yaml:"url"`
-	MaxPoolSize int `mapstructure:"maxPoolSize" json:"maxPoolSize" yaml:"maxPoolSize"`
-	MinIdle int `mapstructure:"minIdle" json:"minIdle" yaml:"minIdle"`
+	Enabled     bool   `mapstructure:"enabled" json:"enabled" yaml:"enabled"`
+	Dialect     string `mapstructure:"dialect" json:"dialect" yaml:"dialect"`
+	Scheme      string `mapstructure:"scheme" json:"scheme" yaml:"scheme"`
+	Url         string `mapstructure:"url" json:"url" yaml:"url"`
+	MaxPoolSize int    `mapstructure:"maxPoolSize" json:"maxPoolSize" yaml:"maxPoolSize"`
+	MinIdle     int    `mapstructure:"minIdle" json:"minIdle" yaml:"minIdle"`
 }

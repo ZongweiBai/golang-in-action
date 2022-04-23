@@ -10,8 +10,11 @@ import (
 
 var redisOnce sync.Once
 
-// 初始化Redis连接
+// InitRedis 初始化Redis连接
 func InitRedis() {
+	if CONFIG.Redis.Enabled == false {
+		return
+	}
 	redisOnce.Do(func() {
 		rdb := redis.NewClient(&redis.Options{
 			Addr:     CONFIG.Redis.Host + ":" + strconv.Itoa(CONFIG.Redis.Port),
@@ -36,7 +39,7 @@ func InitRedis() {
 
 		_, err := rdb.Ping(ctx).Result()
 		if err != nil {
-			LOG.Errorf("初始化Redis失败", err)
+			LOG.Errorf("初始化Redis失败:%v", err)
 			panic(err)
 		}
 

@@ -67,7 +67,7 @@ func InitWebServer(zapLogger *zap.Logger) {
 		}))
 		{
 			// 获取Token
-			oauthGroup.POST("/token", endpoint.GenerateAcessToken)
+			oauthGroup.POST("/token", endpoint.GenerateAccessToken)
 			// 校验Token
 			oauthGroup.GET("/token/validate", endpoint.ValidateAcessToken)
 		}

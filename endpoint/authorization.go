@@ -10,7 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// GenerateAcessToken 生成JWTtoken
+// GenerateAccessToken 生成JWTtoken
 // @Summary 生成JWTtoken
 // @Description 通过用户信息生成JWTtoken
 // @Tags Token相关接口
@@ -19,7 +19,7 @@ import (
 // @Param Authorization header string false "Basic 用户令牌"
 // @Success 200 {object} JwtTokenMessage
 // @Router /v1/oauth/token [post]
-func GenerateAcessToken(c *gin.Context) {
+func GenerateAccessToken(c *gin.Context) {
 	config.LOG.Debugf("进入到GenerateAcessToken方法")
 
 	jwtTokenMessage := JwtTokenMessage{}

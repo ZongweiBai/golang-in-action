@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// 初始化zaplog
+// InitLogger 初始化zaplog
 func InitLogger() (*zap.Logger, *zap.SugaredLogger) {
 	writeSyncer := getLogWriter()
 	encoder := getEncoder()

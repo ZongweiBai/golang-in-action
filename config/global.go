@@ -1,11 +1,11 @@
 package config
 
 import (
+	"github.com/bwmarrin/snowflake"
 	"github.com/go-redis/redis/v8"
+	"github.com/jinzhu/gorm"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
-	"github.com/jinzhu/gorm"
-	"github.com/bwmarrin/snowflake"
 )
 
 var (
@@ -17,7 +17,7 @@ var (
 	DBCONN *gorm.DB
 )
 
-// 初始化snowflake
+// InitSnowflake 初始化snowflake
 func InitSnowflake() {
 	// Create a new Node with a Node number of 1
 	node, err := snowflake.NewNode(1)
