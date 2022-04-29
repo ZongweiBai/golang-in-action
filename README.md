@@ -1,6 +1,6 @@
 # golang-in-action
 
-Golang entry project integrates common components and functions such as gin, swagger, JWT, vaper, zap, redis, etc.
+Golang's entry project integrates common components and functions such as gin, swagger, JWT, vaper, zap, redis, etc.
 
 # How to use
 

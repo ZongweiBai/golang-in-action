@@ -1,5 +1,6 @@
 package model
-type ApiBacisAuth struct {
+
+type ApiBasicAuth struct {
 	UserName string `json:"username"`
 	Password string `json:"password"`
 }

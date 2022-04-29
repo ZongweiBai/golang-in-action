@@ -7,14 +7,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// GetAdminHandler 获取Admin信息
+// AdminHandler GetAdminHandler 获取Admin信息
 // @Summary 获取Admin信息
 // @Description 通过名称获取Admin信息
 // @Tags Admin相关接口
 // @Accept application/json
 // @Produce application/json
 // @Param Authorization header string false "Basic 用户令牌"
-// @Security model.ApiBacisAuth
+// @Security model.ApiBasicAuth
 // @Success 200 {object} repository.User
 // @Router /v1/admin/users [get]
 func AdminHandler(c *gin.Context) {
